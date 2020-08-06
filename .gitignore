@@ -254,3 +254,4 @@ env/*
 .vscode/settings.json
 __pycache__/*.pyc
 .cache-tonyryanworldwide
+credentials.json

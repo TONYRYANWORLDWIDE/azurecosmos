@@ -4,16 +4,21 @@ import spotipy.util as util
 from spotipy.oauth2 import SpotifyOAuth
 import itertools
 from itertools import combinations
+import json
+
+credentials_file = 'credentials.json'
+with open(credentials_file) as json_file:
+        data = json.load(json_file)
+        client_id = data['creds']['client_id']
+        client_secret = data['creds']['client_secret']
+        redirect_uri = data['creds']['redirect_uri']
 
 
-client_id = SPOTIPY_CLIENT_ID ='bb7c475418484e7784d9cd25b5f9f52c'
-client_secret = SPOTIPY_CLIENT_SECRET='b0da0baeeab1499884912aea11f4ca58'
-redirect_uri =SPOTIPY_REDIRECT_URI='https://localhost:8080/callback/'
 
 
-os.environ["SPOTIPY_CLIENT_ID"] = "bb7c475418484e7784d9cd25b5f9f52c"
-os.environ["SPOTIPY_CLIENT_SECRET"] = "b0da0baeeab1499884912aea11f4ca58"
-os.environ["SPOTIPY_REDIRECT_URI"] = "https://localhost:8080/callback/"
+os.environ["SPOTIPY_CLIENT_ID"] = client_id
+os.environ["SPOTIPY_CLIENT_SECRET"] = client_secret
+os.environ["SPOTIPY_REDIRECT_URI"] = redirect_uri
 
 scope = "playlist-modify-public playlist-modify-private user-modify-playback-state user-top-read"
 scope +=            " user-modify-playback-state user-read-playback-state user-library-read user-library-modify"
