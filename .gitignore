@@ -252,3 +252,5 @@ paket-files/
 *.sln.iml
 env/*
 .vscode/settings.json
+__pycache__/*.pyc
+.cache-tonyryanworldwide
